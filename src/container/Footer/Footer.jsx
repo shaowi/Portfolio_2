@@ -6,7 +6,7 @@ import { client } from '../../client';
 import './Footer.scss';
 
 const Footer = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [formData, setFormData] = useState({ username: '', email: '', message: '' });
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -22,18 +22,20 @@ const Footer = () => {
 
     const contact = {
       _type: 'contact',
-      name: formData.username,
-      email: formData.email,
-      message: formData.message,
+      username,
+      email,
+      message,
     };
 
     client.create(contact)
       .then(() => {
         setLoading(false);
         setIsFormSubmitted(true);
-      })
-      .catch((err) => console.log(err));
+      });
   };
+
+  const myEmail = 'lee_shao_wee@hotmail.com';
+  const myPhoneNum = '+6593226358';
 
   return (
     <>
@@ -42,11 +44,11 @@ const Footer = () => {
       <div className="app__footer-cards">
         <div className="app__footer-card ">
           <img src={images.email} alt="email" />
-          <a href="mailto:hello@micael.com" className="p-text">hello@micael.com</a>
+          <a href={`mailto:${myEmail}`} className="p-text">{myEmail}</a>
         </div>
         <div className="app__footer-card">
           <img src={images.mobile} alt="phone" />
-          <a href="tel:+1 (123) 456-7890" className="p-text">+1 (123) 456-7890</a>
+          <a href={`tel:${myPhoneNum}`} className="p-text">{myPhoneNum}</a>
         </div>
       </div>
       {!isFormSubmitted ? (

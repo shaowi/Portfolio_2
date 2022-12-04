@@ -21,12 +21,10 @@
   align-items: center;
 
   img {
-    width: 90px;
-    height: 20px;
+    width: 120px;
 
     @media screen and (min-width: 2000px) {
       width: 180px;
-      height: 40px;
     }
   }
 }
@@ -92,7 +90,6 @@
   align-items: center;
   background-color: var(--secondary-color);
 
-
   svg {
     width: 70%;
     height: 70%;
@@ -110,12 +107,12 @@
 
     width: 80%;
     height: 100vh;
-    
+
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
     flex-direction: column;
-    
+
     background: url('../../assets/bgWhite.png');
     background-color: var(--white-color);
     background-size: cover;
