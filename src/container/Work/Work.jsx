@@ -6,18 +6,32 @@ import { AppWrap, MotionWrap } from '../../wrapper';
 import { urlFor, client } from '../../client';
 import './Work.scss';
 
-const TAGS = ['Web App', 'Mobile App', 'GUI', 'All'];
-
 const Work = () => {
   const [works, setWorks] = useState([]);
   const [filterWork, setFilterWork] = useState([]);
+  const [tagsShown, setTagsShown] = useState(['All']);
   const [activeFilter, setActiveFilter] = useState('All');
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
+
+  const toCapitalCase = (string) => string.charAt(0).toUpperCase() + string.slice(1);
+
+  const capitalizeAll = (str) => str.split(' ').map(toCapitalCase).join(' ');
+
+  function setAvailableTagsFromWorks(data) {
+    let allTags = new Set();
+    // eslint-disable-next-line no-restricted-syntax
+    for (const { tags } of data) {
+      const curTagSet = new Set([...tags]);
+      allTags = new Set([...allTags, ...curTagSet]);
+    }
+    setTagsShown((curTag) => [...curTag, ...[...allTags].map(capitalizeAll)]);
+  }
 
   useEffect(() => {
     const query = '*[_type == "works"]';
 
     client.fetch(query).then((data) => {
+      setAvailableTagsFromWorks(data);
       setWorks(data);
       setFilterWork(data);
     });
@@ -43,7 +57,7 @@ const Work = () => {
       <h2 className="head-text">My Creative <span>Portfolio</span> Section</h2>
 
       <div className="app__work-filter">
-        {TAGS.map((item, index) => (
+        {tagsShown.map((item, index) => (
           <div
             key={index}
             onClick={() => handleWorkFilter(item)}

@@ -1,10 +1,46 @@
-# Micael - The Ultimate Web Development Portfolio 
-![Micael](https://i.ibb.co/fHPM38q/image.png)
+<h1 align="center" id="top">Welcome to My Portfolio 👋</h1>
 
-## Introduction
-This is a code repository for the corresponding video tutorial.
+![Portfolio Image](https://i.ibb.co/VDmrgCW/portfolio.jpg)
 
-Do you know the best way to show your skills to employers or potential clients? Stand out from the crowd by presenting a well-digitalized flexible portfolio and get your dream job.
+### 🏠 [Live Site](https://leeshaowee.netlify.app/)
 
-## Stay up to date with new projects
-New major projects coming soon, subscribe to the mailing list to stay up to date https://resource.jsmasterypro.com/newsletter
+---
+
+### Table of Contents
+
+You're sections headers will be used to reference location of destination.
+
+- [Description](#description)
+- [Technologies](#technologies)
+- [Author Info](#author-info)
+
+---
+
+## Description
+
+> This website conprises of information about myself, my works, skills and experiences.
+
+## Technologies
+
+1. SASS
+2. React JS
+3. Sanity (For CMS)
+
+[Back To The Top](#top)
+
+---
+
+## Author Info
+
+👤 **Lee Shao Wee**
+
+- Website: [URL](https://leeshaowee.netlify.app/)
+- Github: [@shaowi](https://github.com/shaowi)
+
+---
+
+## Show your support
+
+Give a ⭐️ if this project helped you!
+
+[Back To The Top](#top)

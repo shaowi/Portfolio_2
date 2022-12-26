@@ -181,7 +181,7 @@
   }
 
   .profile_img {
-    transform: translate(-50px, -22%);
+    transform: translate(-25px, -60%);
     scale: 1.2;
   }
 
@@ -197,6 +197,10 @@
 
   @media screen and (max-width: 1200px) {
     margin: 2rem 0;
+    .profile_img {
+      transform: translate(-20px, 0%);
+      scale: 1.2;
+    }
   }
 }
 
